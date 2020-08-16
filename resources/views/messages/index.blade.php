@@ -17,6 +17,9 @@
             <tr>
                 <td>{{ $message->id }}</td>
                 <td>{{ $message->content }}</td>
+
+                <td>{!! link_to_route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
+                <td>{{ $message->content }}</td>
             </tr>
             @endforeach
         </tbody>

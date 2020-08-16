@@ -60,7 +60,12 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
-        //
+        $message = Message::find($id);
+
+        return view('messages.show', [
+            'message' => $message,
+
+        ]);
     }
 
     /**
@@ -71,7 +76,11 @@ class MessagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $message = Message::find($id);
+
+        return view('messages.edit', [
+            'message' => $message,
+        ]);
     }
 
     /**

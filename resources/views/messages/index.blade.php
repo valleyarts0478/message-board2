@@ -15,10 +15,7 @@
         <tbody>
             @foreach ($messages as $message)
             <tr>
-                <td>{{ $message->id }}</td>
-                <td>{{ $message->content }}</td>
-
-                <td>{!! link_to_route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
+                <td>{!! route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
                 <td>{{ $message->content }}</td>
             </tr>
             @endforeach
@@ -26,6 +23,6 @@
     </table>
 @endif
 
-{!! link_to_route('messages.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}
+{!! route('messages.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}
 
 @endsection

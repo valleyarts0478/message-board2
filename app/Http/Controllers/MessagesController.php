@@ -29,7 +29,12 @@ class MessagesController extends Controller
      */
     public function create()
     {
-        //
+        $message = new Message;
+
+        return view('messages.create', [
+            
+            'message' => $message,
+        ]);
     }
 
     /**
@@ -40,7 +45,11 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = new Message;
+        $message->content = $request->content;
+        $message->save();
+
+        return redirect('/');
     }
 
     /**
